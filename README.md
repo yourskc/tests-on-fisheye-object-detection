@@ -25,7 +25,7 @@ pip install -r requirements.txt
 
 [Download Link](https://drive.google.com/drive/folders/1f5sj08ztjm7DjV1sYxSHa-dVm-vnA56z?usp=sharing) 
 
-We'll use yolo_object_detection.ptin the above.
+We'll use download yolo_object_detection.pt (121M) and put in ./models folder.
 
 3. Run the Application:
 ```
@@ -92,7 +92,6 @@ However, for fisheye image,
 ![](images/p03.png)
 
 Nothing has been detected in the above fisheye image.
-
 
 
 
