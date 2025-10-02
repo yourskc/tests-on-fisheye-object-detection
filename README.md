@@ -93,5 +93,24 @@ However, for fisheye image,
 
 Nothing has been detected in the above fisheye image.
 
+### Night sight - 1/2
 
+This model can be used to detect object from night vision image well.
 
+The original image is as below,
+
+![](images/p07-1.png)
+
+As we can see in the below, alrough the image has poor contrast,  the cars, motorcycles and pedestrians can be detected well. 
+
+![](images/p07-2.png)
+
+### Night sight - 2/2
+
+The original image is as below,
+
+![](images/p08-1.png)
+
+The blurred motocycles at night can also be detected well. 
+
+![](images/p08-2.png)
