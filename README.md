@@ -1,4 +1,4 @@
-# Survey of Fisheye Object Detection
+# Tests on Fisheye Object Detection
 
 We tested a model for fisheye object detection with fisheye images from another fisheye dataset 
 
