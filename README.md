@@ -1,6 +1,6 @@
 # Tests on Fisheye Object Detection
 
-We tested a model for fisheye object detection with fisheye images from another fisheye dataset 
+We tested a model for fisheye object detection with some fisheye images from another fisheye dataset. we also compile the model to Renesas DRP-AI_TVM for the developments of AI applications. 
 
 ### Fisheye Object Detection Model
 
@@ -114,3 +114,4 @@ The original image is as below,
 The blurred motocycles at night can also be detected well. 
 
 ![](images/p08-2.png)
+
