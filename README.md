@@ -1,17 +1,15 @@
 # Tests on Fisheye Object Detection
 
-We tested a model for fisheye object detection with some fisheye images from another fisheye dataset. we also compile the model to Renesas DRP-AI_TVM for the developments of AI applications. 
+It is a note about tests of an AI model. We hope to have a understanding about the capability and accuracy  
+of the AI model for the object detection on fisheye images. Part 1 is the AI model, Part 2 is a road fisheye image dataset. Part 3 is the compilation of the model from pytorch to onnx, then to DRP-AI_TVM.  
 
-### Fisheye Object Detection Model
+
+## 1. Fisheye Object Detection Model
 
 https://github.com/arda92a/fisheye-object-detection
 
-### Fisheye Image Dataset 
-
-https://github.com/MoyoG/FishEye8K
 
 The fisheye-object-detection project provides a Flask-based web application for object detection and segmentation in fisheye camera images and videos. It supports multiple deep learning models, including YOLO (for object detection and segmentation), RetinaNet, and Faster R-CNN, to detect and classify objects such as bikes, buses, cars, pedestrians, and trucks.
-
 
 
 Follow the instructions in the repo' README.md to install dependencies, prepare
@@ -42,19 +40,19 @@ Select the Model,
 
 Upload a fisheye image, here we use the image from the below dataset 
 
-Dataset :
+## 2. Fisheye Image Dataset 
 
-Fisheye image dataset with cars and bikes can be found here,
+A fisheye image dataset used to detect cars and bikes can be found here,
 
 https://github.com/MoyoG/FishEye8K
 
 ![](images/p02.png)
 
-dataset URL is as below,
+As described in the above repo, the URL of the dataset is as below,
 
 https://scidm.nchc.org.tw/zh_TW/dataset/fisheye8k/resource/f6e7500d-1d6d-48ea-9d38-c4001a17170e
 
-example dataset image,
+Download the above datdaset, we choose one image file as our test sample as below,
 
 ![](images/p03.png)
 
@@ -114,4 +112,6 @@ The original image is as below,
 The blurred motocycles at night can also be detected well. 
 
 ![](images/p08-2.png)
+
+
 
