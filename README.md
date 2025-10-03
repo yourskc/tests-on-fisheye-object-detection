@@ -1,6 +1,6 @@
 # Tests on Fisheye Object Detection
 
-It is a note about tests of an AI model. We hope to have a understanding about the capability and accuracy  
+It is a note about tests of an AI model. We hope to have an understanding about the capability and accuracy  
 of the AI model for the object detection on fisheye images. Part 1 is the AI model, Part 2 is a road fisheye image dataset. Part 3 is the compilation of the model from pytorch to onnx, then to DRP-AI_TVM.  
 
 
@@ -112,6 +112,95 @@ The original image is as below,
 The blurred motocycles at night can also be detected well. 
 
 ![](images/p08-2.png)
+
+
+## 3. Compilation of the model
+
+Our next step is using the model on our target embedded system, Renesas RZ/V2H.
+
+### Step 1. Convert PyTorch to Onnx
+
+Run the below pt_to_onnx.py to covnert the model file yolo_object_detection.pt to yolo_object_detection.onnx,
+
+pt_to_onnx.py
+```
+from ultralytics import YOLO
+model = YOLO('yolo_object_detection.pt')
+model.export(format='onnx')
+yolo predict task=detect model=’yolo_object_detection.onnx’ source=’camera3_A_5.png’ 
+```
+
+### Step 2. Find input name and input shape 
+
+We need to find out needed parameters for the next compilation step. Use the python program below,
+
+onnx_input_info.py
+
+```
+import onnx
+model_path = "yolo_object_detection.onnx"
+model = onnx.load(model_path)
+graph_inputs = model.graph.input    
+for model_input in graph_inputs:
+	input_name = model_input.name
+	input_shape = []
+	for dim in model_input.type.tensor_type.shape.dim:
+		if dim.HasField("dim_value"):
+			input_shape.append(dim.dim_value)
+		else:
+			# This dimension is dynamic (e.g., batch size), often represented by -1
+			input_shape.append(-1)
+	print(f"Input Name: {input_name}, Input Shape: {input_shape}")   
+
+```
+The expect output is:
+```
+Input name: image, Input Shape:[1,3,640,640]
+```
+
+### Step 3. Compilation for DRP-AI-TVM
+
+Reference to:
+
+https://github.com/renesas-rz/rzv_drp-ai_tvm/blob/v2.3.0/tutorials/tutorial_RZV2H.md
+
+We need to prepare the environment first, 
+
+First, build a docker image according to the instructions below,
+
+https://github.com/renesas-rz/rzv_drp-ai_tvm/blob/main/setup/SetupV2H.md
+
+There are 5.20/ 6.00 versions for your choice.
+
+if you use 5.20, switch the branches on the above page from Main to v2.3.0.
+
+After preparing the environment, copy the model file yolo_object_detection.onnx to the folder that the container can access, run the docker container and run the commands below, notice that image name -i and image shape -s parameters are from the previous inspection.
+ 
+```
+cd /drp-ai_tvm
+python3 compile_onnx_model.py ./yolo_object_detection.onnx -o yolo_onnx -s 1,3,640,640 -i images
+
+```
+
+The expected output will be in the yolo_onnx/ folder
+
+```
+├── deploy.json
+├── deploy.params
+├── deploy.so
+└── preprocess
+    ├── addr_map.txt
+    ├── aimac_cmd.bin
+    ├── aimac_desc.bin
+    ├── aimac_param_cmd.bin
+    ├── aimac_param_desc.bin
+    ├── drp_config.mem
+    ├── drp_desc.bin
+    ├── drp_param.bin
+    ├── drp_param_info.txt
+    └── weight.bin
+
+```
 
 
 
