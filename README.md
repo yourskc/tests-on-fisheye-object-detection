@@ -1,7 +1,6 @@
 # Tests on Fisheye Object Detection
 
-It is a note about tests of an AI model. We hope to have an understanding about the capability and accuracy  
-of the AI model for the object detection on fisheye images. Part 1 is the AI model, Part 2 is a road fisheye image dataset. Part 3 is the compilation of the model from pytorch to onnx, then to DRP-AI_TVM.  
+It is a note about tests of an AI model. We hope to have an understanding about the capability and accuracy of the AI model for the object detection on fisheye images. Part 1 is the AI model, Part 2 is a road fisheye image dataset. Part 3 is the compilation of the model from pytorch to onnx, then to DRP-AI_TVM.  
 
 
 ## 1. Fisheye Object Detection Model
