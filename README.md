@@ -157,6 +157,19 @@ The expect output is:
 Input name: image, Input Shape:[1,3,640,640]
 ```
 
+### Step 3. Onnx Verification ( Optional )
+
+We can run the python code below to verify the above onnx model.
+
+Python code:
+
+detection-fisheye.py 
+
+Expected result :
+
+![](images/onnx_result.png)
+
+
 ### Step 3. Compilation for DRP-AI-TVM
 
 Reference to:
