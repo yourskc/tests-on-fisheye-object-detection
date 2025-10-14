@@ -161,16 +161,21 @@ Input name: image, Input Shape:[1,3,640,640]
 
 We can run the python code below to verify the above onnx model.
 
-Python code:
 
-detection-fisheye.py 
+[Python code ](detection-fisheye.py)
+
+Run
+```
+python3 detection-fisheye.py  
+```
 
 Expected result :
 
 ![](images/onnx_result.png)
 
+The results looks fine.
 
-### Step 3. Compilation for DRP-AI-TVM
+### Step 3. Compilation for Renesas/ RZV2H/ DRP-AI-TVM
 
 Reference to:
 
