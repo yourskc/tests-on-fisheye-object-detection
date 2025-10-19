@@ -191,17 +191,23 @@ There are 5.20/ 6.00 versions for your choice.
 
 if you use 5.20, switch the branches on the above page from Main to v2.3.0.
 
+```
+git checkout v2.3.0
+```
+
 After preparing the environment, copy the model file yolo_object_detection.onnx to the folder that the container can access, run the docker container and run the commands below, notice that image name -i and image shape -s parameters are from the previous inspection.
  
 ```
-cd /drp-ai_tvm
-python3 compile_onnx_model.py ./yolo_object_detection.onnx -o yolo_onnx -s 1,3,640,640 -i images
+cd /drp-ai_tvm/tutorial
+python3 compile_cpu_only_onnx_model.py ./yolo_object_detection.onnx -o yolo -s 1,3,640,640 -i images
 
 ```
 
-The expected output will be in the yolo_onnx/ folder
+The expected output will be in the yolo/ folder
 
 ```
+tree yolo
+yolo
 ├── deploy.json
 ├── deploy.params
 ├── deploy.so
