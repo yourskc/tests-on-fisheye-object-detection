@@ -126,9 +126,30 @@ pt_to_onnx.py
 from ultralytics import YOLO
 model = YOLO('yolo_object_detection.pt')
 model.export(format='onnx')
-yolo predict task=detect model=’yolo_object_detection.onnx’ source=’camera3_A_5.png’ 
 ```
+or run it with more parameters,
 
+pt_to_onnx2.py
+```
+from ultralytics import YOLO
+model = YOLO('yolo_object_detection.pt')
+model.export(
+    format='onnx',
+    imgsz=(640,640),
+    keras=False,
+    optimize=False,
+    half=False,
+    int8=False,
+    dynamic=False,
+    simplify=False,
+    opset=None,
+    workspace=4.0,
+    nms=False,
+    batch=1,
+    device="cpu"
+)
+
+```
 ### Step 2. Find input name and input shape 
 
 We need to find out needed parameters for the next compilation step. Use the python program below,
