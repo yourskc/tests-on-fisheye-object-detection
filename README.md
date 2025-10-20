@@ -216,7 +216,7 @@ if you use 5.20, switch the branches on the above page from Main to v2.3.0.
 git checkout v2.3.0
 ```
 
-After preparing the environment, copy the model file yolo_object_detection.onnx to the folder that the container can access, run the docker container and run the commands below, notice that image name -i and image shape -s parameters are from the previous inspection.
+After preparing the environment, copy the model file **yolo_object_detection.onnx** to the folder that the docker container can access, run the commands below in the container, notice that image name -i and image shape -s parameters are from the previous inspection.
  
 ```
 cd /drp-ai_tvm/tutorial
