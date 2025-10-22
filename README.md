@@ -246,5 +246,41 @@ yolo
 
 ```
 
+Compilation 2:
 
+```
+python3 compile_onnx_model_quant.py \
+    ./yolo_object_detection.onnx \
+    -o yolo3 \
+    -t $SDK \
+    -d $TRANSLATOR \
+    -c $QUANTIZER \
+    -v 100 \
+    -s 1,3,640,640
+```
+
+output:
+
+```
+├── deploy.json
+├── deploy.params
+├── deploy.so
+├── input_0.bin
+├── interpreter_out
+│   ├── input_0.bin
+│   └── ref_result_0_fp16.bin
+└── preprocess
+    ├── addr_map.txt
+    ├── aimac_cmd.bin
+    ├── aimac_desc.bin
+    ├── aimac_param_cmd.bin
+    ├── aimac_param_desc.bin
+    ├── drp_config.mem
+    ├── drp_desc.bin
+    ├── drp_param.bin
+    ├── drp_param_info.txt
+    └── weight.bin
+
+
+```
 
