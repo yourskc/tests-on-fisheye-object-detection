@@ -1,3 +1,23 @@
+Reference :
+
+drp-ai_tvm
+
+[https://github.com/renesas-rz/rzv_drp-ai_tvm/blob/v2.3.0/tutorials/tutorial_RZV2H.md](https://github.com/renesas-rz/rzv_drp-ai_tvm/blob/v2.3.0/tutorials/tutorial_RZV2H.md)
+
+DRP-AI Translator i8 [V1.10]
+
+[https://www.renesas.com/en/software-tool/drp-ai-translator-i8?srsltid=AfmBOoq8D0ml6J1RcvckTFiM3mUt9L5Y-fP0LhTlb_kEZrL66_9Yz1xh#downloads](https://www.renesas.com/en/software-tool/drp-ai-translator-i8?srsltid=AfmBOoq8D0ml6J1RcvckTFiM3mUt9L5Y-fP0LhTlb_kEZrL66_9Yz1xh#downloads)
+
+DRP-AI Quantizer
+
+[https://www.renesas.com/en/document/mas/drp-ai-quantizer-v130-users-manual?r=25472906](https://www.renesas.com/en/document/mas/drp-ai-quantizer-v130-users-manual?r=25472906)
+
+drp-ai_driver
+
+[https://github.com/renesas-rz/rzv2h_drp-ai_driver](https://github.com/renesas-rz/rzv2h_drp-ai_driver)
+
+
+
 Compare the compile parameter and run result on V2H 
 
 ## 1. Case 1 
