@@ -1,5 +1,10 @@
 Reference :
 
+AI SDK
+
+[https://www.renesas.com/en/software-tool/rzv2h-ai-software-development-kit#overview](https://www.renesas.com/en/software-tool/rzv2h-ai-software-development-kit#overview)
+
+
 drp-ai_tvm
 
 [https://github.com/renesas-rz/rzv_drp-ai_tvm/blob/v2.3.0/tutorials/tutorial_RZV2H.md](https://github.com/renesas-rz/rzv_drp-ai_tvm/blob/v2.3.0/tutorials/tutorial_RZV2H.md)
@@ -16,6 +21,9 @@ drp-ai_driver
 
 [https://github.com/renesas-rz/rzv2h_drp-ai_driver](https://github.com/renesas-rz/rzv2h_drp-ai_driver)
 
+R01_object_detection
+
+[https://github.com/renesas-rz/rzv_ai_sdk/tree/main/R01_object_detection#application-build-stage](https://github.com/renesas-rz/rzv_ai_sdk/tree/main/R01_object_detection#application-build-stage)
 
 
 Compare the compile parameter and run result on V2H 
